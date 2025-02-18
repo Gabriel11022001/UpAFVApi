@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UpOnlineAFVApi.Contexto;
+using UpOnlineAFVApi.Repositorio;
+using UpOnlineAFVApi.Servico;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,10 @@ builder.Services.AddDbContext<ApiDbContexto>(options =>
 {
     options.UseSqlServer(stringConexaoBancoDados);
 });
+
+// injeções de dependência
+builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+builder.Services.AddScoped<ICategoriaServico, CategoriaServico>();
 
 var app = builder.Build();
 
