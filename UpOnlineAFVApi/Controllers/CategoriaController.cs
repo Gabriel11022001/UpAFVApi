@@ -56,5 +56,14 @@ namespace UpOnlineAFVApi.Controllers
             return resposta.Ok ? Ok(resposta) : BadRequest(resposta);
         }
 
+        // alterar o status da categoria
+        [ HttpPut("alterar-status") ]
+        public async Task<IActionResult> AlterarStatusCategoria([ FromQuery ]int idCategoria, Boolean novoStatus)
+        {
+            Resposta<CategoriaDTO> resposta = await _categoriaServico.AlterarStatusCategoria(idCategoria, novoStatus);
+
+            return resposta.Ok ? Ok(resposta) : BadRequest(resposta);
+        }
+
     }
 }
