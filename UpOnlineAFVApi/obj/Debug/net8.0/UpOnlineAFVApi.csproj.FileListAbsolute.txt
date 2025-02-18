@@ -169,3 +169,5 @@ C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\Up
 C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\UpOnlineAFVApi\UpOnlineAFVApi\obj\Debug\net8.0\UpOnlineAFVApi.pdb
 C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\UpOnlineAFVApi\UpOnlineAFVApi\obj\Debug\net8.0\UpOnlineAFVApi.genruntimeconfig.cache
 C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\UpOnlineAFVApi\UpOnlineAFVApi\obj\Debug\net8.0\ref\UpOnlineAFVApi.dll
+C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\UpOnlineAFVApi\UpOnlineAFVApi\obj\Debug\net8.0\UpOnlineAFVApi.sourcelink.json
+C:\Users\Gabriel Rodrigues\Desktop\MEUS ARQUIVOS\MEUS_PROJETOS\UpOnlineAFVApi\UpOnlineAFVApi\UpOnlineAFVApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
