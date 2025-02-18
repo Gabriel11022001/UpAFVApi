@@ -17,5 +17,7 @@ namespace UpOnlineAFVApi.Servico
 
         Task<Resposta<Boolean>> DeletarCategoria(int idCategoriaDeletar);
 
+        Task<Resposta<CategoriaDTO>> AlterarStatusCategoria(int idCategoria, Boolean novoStatus);
+
     }
 }

@@ -48,6 +48,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UpOnlineAFVApi.Controllers.CategoriaController",
+    "Method": "AlterarStatusCategoria",
+    "RelativePath": "api/Categoria/alterar-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCategoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "novoStatus",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UpOnlineAFVApi.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

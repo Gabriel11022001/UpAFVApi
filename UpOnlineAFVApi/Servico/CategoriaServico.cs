@@ -14,6 +14,45 @@ namespace UpOnlineAFVApi.Servico
             _categoriaRepositorio = categoriaRepositorio;
         }
 
+        // alterar status da categoria
+        public async Task<Resposta<CategoriaDTO>> AlterarStatusCategoria(int idCategoria, bool novoStatus)
+        {
+
+            try
+            {
+                Categoria categoriaAlterarStatus = await _categoriaRepositorio.BuscarCategoriaPeloId(idCategoria);
+
+                if (categoriaAlterarStatus is null)
+                {
+
+                    return new Resposta<CategoriaDTO>("Categoria não encontrada!", false, null);
+                }
+
+                if (categoriaAlterarStatus.Ativo == novoStatus)
+                {
+
+                    return new Resposta<CategoriaDTO>("A categoria já possui esse status!", true, null);
+                }
+
+                categoriaAlterarStatus.Ativo = novoStatus;
+
+                await _categoriaRepositorio.EditarCategoria(categoriaAlterarStatus);
+
+                CategoriaDTO categoriaDTO = new CategoriaDTO();
+                categoriaDTO.CategoriaId = categoriaAlterarStatus.CategoriaId;
+                categoriaDTO.Nome = categoriaAlterarStatus.Nome;
+                categoriaDTO.Status = categoriaAlterarStatus.Ativo;
+
+                return new Resposta<CategoriaDTO>("Status da categoria alterado com sucesso!", true, categoriaDTO);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<CategoriaDTO>("Erro ao tentar-se alterar o status da categoria!", false, null); 
+            }
+
+        }
+
         // buscar categoria pelo id
         public async Task<Resposta<CategoriaDTO>> BuscarCategoriaPeloId(int idCategoriaFiltrar)
         {
