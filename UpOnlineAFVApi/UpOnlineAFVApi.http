@@ -1,0 +1,6 @@
+@UpOnlineAFVApi_HostAddress = http://localhost:5001
+
+GET {{UpOnlineAFVApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

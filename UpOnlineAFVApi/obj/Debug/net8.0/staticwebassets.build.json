@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "YvgWCLJqOrN8L1rNqSmWkFj/PKykwEfLvOgss19LyIA=",
+  "Source": "UpOnlineAFVApi",
+  "BasePath": "_content/UpOnlineAFVApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
