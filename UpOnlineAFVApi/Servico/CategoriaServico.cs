@@ -8,6 +8,8 @@ namespace UpOnlineAFVApi.Servico
     {
 
         private readonly ICategoriaRepositorio _categoriaRepositorio;
+        private const int _maximoElementosPorPagina = 10;
+        private const int _minimoElementosPorPagina = 5;
 
         public CategoriaServico(ICategoriaRepositorio categoriaRepositorio)
         {
@@ -82,9 +84,51 @@ namespace UpOnlineAFVApi.Servico
 
         }
 
+        // buscar categorias de forma paginada
         public async Task<Resposta<List<CategoriaDTO>>> BuscarCategorias(int paginaAtual, int totalElementosPorPagina)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+
+                if (paginaAtual < 1)
+                {
+                    paginaAtual = 1;
+                }
+
+                if (totalElementosPorPagina < _minimoElementosPorPagina || totalElementosPorPagina > _maximoElementosPorPagina)
+                {
+                    totalElementosPorPagina = _minimoElementosPorPagina;
+                }
+
+                List<Categoria> categorias = await _categoriaRepositorio.BuscarCategorias(paginaAtual, totalElementosPorPagina);
+
+                if (categorias.Count == 0)
+                {
+
+                    return new Resposta<List<CategoriaDTO>>("Não existem categorias cadastradas na base de dados!", true, new List<CategoriaDTO>());
+                }
+
+                List<CategoriaDTO> categoriasDTO = new List<CategoriaDTO>();
+
+                foreach (Categoria categoria in categorias)
+                {
+                    CategoriaDTO categoriaDTO = new CategoriaDTO();
+                    categoriaDTO.CategoriaId = categoria.CategoriaId;
+                    categoriaDTO.Nome = categoria.Nome;
+                    categoriaDTO.Status = categoria.Ativo;
+
+                    categoriasDTO.Add(categoriaDTO);
+                }
+
+                return new Resposta<List<CategoriaDTO>>("Categorias encontradas com sucesso!", true, categoriasDTO);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<List<CategoriaDTO>>("Erro ao tentar-se consultar as categorias!", false, null);
+            }
+
         }
 
         public async Task<Resposta<bool>> DeletarCategoria(int idCategoriaDeletar)
