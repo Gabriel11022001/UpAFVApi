@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UpOnlineAFVApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbe4efe0edaffce82a26a25d216d64adcf400719")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e29d87e3778571ec3f0e57fb29e806e739414109")]
 [assembly: System.Reflection.AssemblyProductAttribute("UpOnlineAFVApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UpOnlineAFVApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

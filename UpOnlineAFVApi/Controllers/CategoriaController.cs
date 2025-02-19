@@ -65,5 +65,20 @@ namespace UpOnlineAFVApi.Controllers
             return resposta.Ok ? Ok(resposta) : BadRequest(resposta);
         }
 
+        // buscar categorias de forma paginada
+        [ HttpGet ]
+        public async Task<IActionResult> BuscarCategorias([ FromQuery ] int paginaAtual, int totalElementosPorPagina)
+        {
+            Resposta<List<CategoriaDTO>> resposta = await _categoriaServico.BuscarCategorias(paginaAtual, totalElementosPorPagina);
+
+            if (resposta.Ok)
+            {
+
+                return Ok(resposta);
+            }
+
+            return BadRequest(resposta);
+        }
+
     }
 }
