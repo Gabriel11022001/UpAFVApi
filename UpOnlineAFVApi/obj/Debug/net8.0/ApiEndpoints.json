@@ -33,6 +33,27 @@
   },
   {
     "ContainingType": "UpOnlineAFVApi.Controllers.CategoriaController",
+    "Method": "BuscarCategorias",
+    "RelativePath": "api/Categoria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paginaAtual",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "totalElementosPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.CategoriaController",
     "Method": "BuscarCategoriaPeloId",
     "RelativePath": "api/Categoria/{idCategoria}",
     "HttpMethod": "GET",
@@ -67,26 +88,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "UpOnlineAFVApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[UpOnlineAFVApi.WeatherForecast, UpOnlineAFVApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

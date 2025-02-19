@@ -16,9 +16,16 @@ namespace UpOnlineAFVApi.Repositorio
             return await Contexto.Categorias.FindAsync(idCategoria);
         }
 
+        // buscar as categorias de forma paginada
         public async Task<List<Categoria>> BuscarCategorias(int paginaAtual, int totalCategoriasPorPagina)
         {
-            throw new NotImplementedException();
+
+            return await Contexto
+                .Categorias
+                .OrderBy(c => c.Nome)
+                .Skip((paginaAtual - 1) * totalCategoriasPorPagina)
+                .Take(totalCategoriasPorPagina)
+                .ToListAsync();
         }
 
         // cadastrar categoria
