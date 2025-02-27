@@ -19,6 +19,26 @@ builder.Services.AddDbContext<ApiDbContexto>(options =>
 // injeções de dependência
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
 builder.Services.AddScoped<ICategoriaServico, CategoriaServico>();
+builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+builder.Services.AddScoped<IClienteServico, ClienteServico>();
+builder.Services.AddScoped<INotificacaoRepositorio, NotificacaoRepositorio>();
+builder.Services.AddScoped<INotificacaoServico, NotificacaoServico>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<ITokenRepositorio, TokenRepositorio>();
+builder.Services.AddScoped<ILoginServico, LoginServico>();
+builder.Services.AddScoped<IUsuarioServico, UsuarioServico>();
+builder.Services.AddScoped<ITokenServico, TokenServico>();
+
+// configurar o cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", (builder) =>
+    {
+        builder.AllowAnyHeader();
+        builder.AllowAnyMethod();
+        builder.AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
 
@@ -29,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
 
