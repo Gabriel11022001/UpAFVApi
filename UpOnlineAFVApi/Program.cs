@@ -28,6 +28,12 @@ builder.Services.AddScoped<ITokenRepositorio, TokenRepositorio>();
 builder.Services.AddScoped<ILoginServico, LoginServico>();
 builder.Services.AddScoped<IUsuarioServico, UsuarioServico>();
 builder.Services.AddScoped<ITokenServico, TokenServico>();
+builder.Services.AddScoped<INivelAcessoRepositorio, NivelAcessoRepositorio>();
+builder.Services.AddScoped<INivelAcessoServico, NivelAcessoServico>();
+builder.Services.AddScoped<IPermissaoRepositorio, PermissaoRepositorio>();
+builder.Services.AddScoped<IPermissaoServico, PermissaoServico>();
+builder.Services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+builder.Services.AddScoped<IProdutoServico, ProdutoServico>();
 
 // configurar o cors
 builder.Services.AddCors(options =>

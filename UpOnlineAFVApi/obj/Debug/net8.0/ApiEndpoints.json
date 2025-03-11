@@ -127,6 +127,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UpOnlineAFVApi.Controllers.NivelAcessoController",
+    "Method": "CadastrarNivelAcesso",
+    "RelativePath": "api/NivelAcesso",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nivelAcessoUsuarioDTO",
+        "Type": "UpOnlineAFVApi.DTOs.NivelAcessoUsuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.NivelAcessoController",
+    "Method": "CadastrarMultiplosNiveisAcesso",
+    "RelativePath": "api/NivelAcesso/cadastrar-multiplos-niveis-acesso",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "niveisAcessoUsuariosDTO",
+        "Type": "System.Collections.Generic.List\u00601[[UpOnlineAFVApi.DTOs.NivelAcessoUsuarioDTO, UpOnlineAFVApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UpOnlineAFVApi.Controllers.NotificacaoController",
     "Method": "CadastrarNotificacao",
     "RelativePath": "api/Notificacao",
@@ -158,6 +190,168 @@
       {
         "Name": "elementosPorPagina",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.PermissaoController",
+    "Method": "CadastrarPermissao",
+    "RelativePath": "api/Permissao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "permissaoNivelAcessoUsuarioDTO",
+        "Type": "UpOnlineAFVApi.DTOs.PermissaoNivelAcessoUsuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "CadastrarProduto",
+    "RelativePath": "api/Produto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "produtoDTOCadastrar",
+        "Type": "UpOnlineAFVApi.DTOs.ProdutoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "DeletarProduto",
+    "RelativePath": "api/Produto",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idProdutoDeletar",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "BuscarProdutos",
+    "RelativePath": "api/Produto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "paginaAtual",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "elementosPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "BuscarProdutoPeloId",
+    "RelativePath": "api/Produto/{idProduto}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idProduto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "AlterarStatusProduto",
+    "RelativePath": "api/Produto/alterar-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "novoStatus",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ProdutoController",
+    "Method": "FiltrarProdutos",
+    "RelativePath": "api/Produto/filtrar-produtos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PrecoVendaInicial",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "PrecoVendaFinal",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "NomeProduto",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

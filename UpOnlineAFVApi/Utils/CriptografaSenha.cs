@@ -6,7 +6,7 @@
         public static String CriptografarSenha(String senha)
         {
 
-            return "";
+            return senha;
         }
 
     }

@@ -90,6 +90,7 @@ namespace UpOnlineAFVApi.Servico
                 usuarioDTO.NivelAcessoId = usuario.NivelAcessoUsuarioId;
                 usuarioDTO.NivelAcessoUsuarioDTO = new NivelAcessoUsuarioDTO();
                 usuarioDTO.Token = tokenUsuario.Token;
+                usuarioDTO.Senha = usuario.Senha;
 
                 return new Resposta<UsuarioDTO>("Login efetuado com sucesso!", true, usuarioDTO);
             }

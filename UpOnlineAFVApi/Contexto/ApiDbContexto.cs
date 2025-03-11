@@ -16,6 +16,7 @@ namespace UpOnlineAFVApi.Contexto
         public DbSet<NivelAcessoUsuario> NiveisAcessoUsuarios { get; set; }
         public DbSet<PermissaoNivelAcessoUsuario> PermissoesNiveisAcessosUsuarios { get; set; }
         public DbSet<TokenUsuario> TokensUsuarios { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         public ApiDbContexto(DbContextOptions<ApiDbContexto> contexto): base(contexto) { }
 

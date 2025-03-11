@@ -10,11 +10,13 @@ namespace UpOnlineAFVApi.Servico
 
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ITokenServico _tokenServico;
+        private readonly INivelAcessoRepositorio _nivelAcessoRepositorio;
        
-        public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, ITokenServico tokenServico)
+        public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, ITokenServico tokenServico, INivelAcessoRepositorio nivelAcessoRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _tokenServico = tokenServico;
+            _nivelAcessoRepositorio = nivelAcessoRepositorio;
         }
 
         public async Task<Resposta<List<UsuarioDTO>>> BuscarUsuarios(String token, int paginaAtual, int elementosPorPagina)
@@ -29,7 +31,7 @@ namespace UpOnlineAFVApi.Servico
             try
             {
                 // validar o token do usuário
-                // TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
+                TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
 
                 // validar e-mail
                 if (!ValidaEmail.ValidarEmail(usuarioDTOCadastrar.Email))
@@ -57,14 +59,22 @@ namespace UpOnlineAFVApi.Servico
                 }
 
                 // validar se existe o nivel de acesso selecionado para o usuário
+                NivelAcessoUsuario nivelAcessoUsuario = await _nivelAcessoRepositorio.BuscarNivelAcessoPeloId(usuarioDTOCadastrar.NivelAcessoId);
+
+                if (nivelAcessoUsuario is null)
+                {
+
+                    return new Resposta<UsuarioDTO>("Nivel de acesso não encontrado!", false, null);
+                }
 
                 Usuario usuario = new Usuario();
                 usuario.Nome = usuarioDTOCadastrar.Nome;
                 usuario.Email = usuarioDTOCadastrar.Email;
                 usuario.Telefone = usuarioDTOCadastrar.Telefone;
-                usuario.Ativo = usuario.Ativo;
+                usuario.Ativo = usuarioDTOCadastrar.Status;
                 usuario.DataCadastro = new DateTime();
                 usuario.NivelAcessoUsuarioId = usuarioDTOCadastrar.NivelAcessoId;
+                usuario.NivelAcessoUsuario = nivelAcessoUsuario;
                 usuario.Senha = CriptografaSenha.CriptografarSenha(usuarioDTOCadastrar.Senha);
 
                 await _usuarioRepositorio.CadastrarUsuario(usuario);
