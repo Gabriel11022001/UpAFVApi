@@ -3,32 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\contexto\\apidbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\contexto\\apidbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\uponlineafvapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\produtoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\produtoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\iprodutoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\iprodutoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\uponlineafvapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\repositorio\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\repositorio\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\repositorio\\iprodutorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\repositorio\\iprodutorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\filtros\\filtroprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\filtros\\filtroprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\resposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\resposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\permissaoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\permissaoservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\utils\\criptografasenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\utils\\criptografasenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\loginservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\loginservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\usuarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\usuarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\servico\\tokenservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\servico\\tokenservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\contexto\\apidbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\contexto\\apidbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|c:\\users\\gabriel rodrigues\\desktop\\meus arquivos\\meus_projetos\\uponlineafvapi\\uponlineafvapi\\uponlineafvapi\\repositorio\\nivelacessorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BAE72FD-A215-455A-B3E7-0F593A1E8FC2}|UpOnlineAFVApi\\UpOnlineAFVApi.csproj|solutionrelative:uponlineafvapi\\repositorio\\nivelacessorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,87 +90,227 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UpOnlineAFVApi",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "RelativeToolTip": "UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-18T17:44:40.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Models\\Categoria.cs",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Models\\Categoria.cs",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Models\\Categoria.cs",
-              "RelativeToolTip": "UpOnlineAFVApi\\Models\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T17:42:29.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\appsettings.json",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\appsettings.json",
-              "RelativeToolTip": "UpOnlineAFVApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-18T17:41:00.269Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\appsettings.Development.json",
-              "RelativeToolTip": "UpOnlineAFVApi\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-18T17:40:58.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApiDbContexto.cs",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
-              "RelativeToolTip": "UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "FiltroProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Filtros\\FiltroProdutos.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Filtros\\FiltroProdutos.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Filtros\\FiltroProdutos.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Filtros\\FiltroProdutos.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T17:31:40.467Z",
+              "WhenOpened": "2025-03-11T13:53:06.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UpOnlineAFVApi.csproj",
-              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "RelativeDocumentMoniker": "UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "RelativeToolTip": "UpOnlineAFVApi\\UpOnlineAFVApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-18T17:31:23.563Z"
+              "DocumentIndex": 12,
+              "Title": "UsuarioServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\UsuarioServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\UsuarioServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\UsuarioServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\UsuarioServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:08:22.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "ProdutoController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Controllers\\ProdutoController.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Controllers\\ProdutoController.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Controllers\\ProdutoController.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Controllers\\ProdutoController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwDwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T19:09:23.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutoServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\ProdutoServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\ProdutoServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\ProdutoServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\ProdutoServico.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAADwv4MBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:56:07.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProdutoServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\IProdutoServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\IProdutoServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\IProdutoServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\IProdutoServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:49:57.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Program.cs",
               "RelativeDocumentMoniker": "UpOnlineAFVApi\\Program.cs",
               "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Program.cs",
               "RelativeToolTip": "UpOnlineAFVApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T17:30:56.226Z"
+              "WhenOpened": "2025-03-03T16:49:27.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProdutoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\DTOs\\ProdutoDTO.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\DTOs\\ProdutoDTO.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\DTOs\\ProdutoDTO.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\DTOs\\ProdutoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:17:10.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IProdutoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\IProdutoRepositorio.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Repositorio\\IProdutoRepositorio.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\IProdutoRepositorio.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Repositorio\\IProdutoRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:23:20.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\ProdutoRepositorio.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Repositorio\\ProdutoRepositorio.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\ProdutoRepositorio.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Repositorio\\ProdutoRepositorio.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAApwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:26:34.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategoriaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\DTOs\\CategoriaDTO.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\DTOs\\CategoriaDTO.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\DTOs\\CategoriaDTO.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\DTOs\\CategoriaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T17:09:47.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CriptografaSenha.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Utils\\CriptografaSenha.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Utils\\CriptografaSenha.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Utils\\CriptografaSenha.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Utils\\CriptografaSenha.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:19:27.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\LoginServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\LoginServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\LoginServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\LoginServico.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwvzkAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T16:41:30.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PermissaoServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\PermissaoServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\PermissaoServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\PermissaoServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\PermissaoServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T16:58:35.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Resposta.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\Resposta.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\Resposta.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\Resposta.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\Resposta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T17:25:08.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TokenServico.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\TokenServico.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Servico\\TokenServico.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Servico\\TokenServico.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Servico\\TokenServico.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:11:01.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApiDbContexto.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Contexto\\ApiDbContexto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:28:10.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Models\\Produto.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Models\\Produto.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Models\\Produto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T14:44:12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NivelAcessoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\NivelAcessoRepositorio.cs",
+              "RelativeDocumentMoniker": "UpOnlineAFVApi\\Repositorio\\NivelAcessoRepositorio.cs",
+              "ToolTip": "C:\\Users\\Gabriel Rodrigues\\Desktop\\MEUS ARQUIVOS\\MEUS_PROJETOS\\UpOnlineAFVApi\\UpOnlineAFVApi\\UpOnlineAFVApi\\Repositorio\\NivelAcessoRepositorio.cs",
+              "RelativeToolTip": "UpOnlineAFVApi\\Repositorio\\NivelAcessoRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T14:42:21.179Z"
             }
           ]
         }
