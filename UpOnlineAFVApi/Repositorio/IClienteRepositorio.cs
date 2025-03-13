@@ -6,19 +6,15 @@ namespace UpOnlineAFVApi.Repositorio
     public interface IClienteRepositorio: IControleTransacao
     {
 
-        Task CadastrarClientePessoaFisica(ClientePessoaFisica clientePessoaFisicaCadastrar);
+        Task CadastrarCliente(Cliente clienteCadastrar);
 
-        Task CadastrarClientePessoaJuridica(ClientePessoaJuridica clientePessoaJuridicaCadastrar);
+        Task EditarCliente(Cliente clienteEditar);
 
         Task<List<Cliente>> BuscarClientes(int paginaAtual, int totalElementosPorPagina);
 
         Task<Cliente> BuscarClientePeloId(int clienteId);
 
         Task DeletarCliente(Cliente clienteDeletar);
-
-        Task EditarClientePessoaFisica(ClientePessoaFisica clientePessoaFisicaEditar);
-
-        Task EditarClientePessoaJuridica(ClientePessoaJuridica clientePessoaJuridicaEditar);
 
         Task<List<Cliente>> FiltrarClientes(int paginaAtual, int totalElementosPorPagina, FiltroClientes filtroClientes);
 
@@ -31,6 +27,8 @@ namespace UpOnlineAFVApi.Repositorio
         Task<Cliente> BuscarClientePeloEmailPrincipal(String emailPrincipal);
 
         Task CadastrarEnderecoCliente(Endereco endereco);
+
+        Task<int> BuscarTotalClientesCadastrados();
 
     }
 }

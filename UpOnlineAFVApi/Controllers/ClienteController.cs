@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using UpOnlineAFVApi.DTOs;
 using UpOnlineAFVApi.Servico;
+using UpOnlineAFVApi.Utils;
 
 namespace UpOnlineAFVApi.Controllers
 {
@@ -30,6 +31,19 @@ namespace UpOnlineAFVApi.Controllers
             }
 
             return BadRequest(respostaCadastrarCliente);
+        }
+
+        // consultar clientes
+        [ HttpGet ]
+        public async Task<IActionResult> BuscarClientes([ FromQuery ] String token, int paginaAtual, int elementosPorPagina)
+        {
+            Resposta<RetornoListagem<List<ClienteDTO>>> respostaConsultarClientes = await _clienteServico.BuscarClientes(
+                token,
+                paginaAtual,
+                elementosPorPagina
+            );
+
+            return respostaConsultarClientes.Ok ? Ok(respostaConsultarClientes) : BadRequest(respostaConsultarClientes);
         }
 
     }

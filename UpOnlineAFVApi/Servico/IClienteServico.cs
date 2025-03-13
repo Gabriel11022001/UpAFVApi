@@ -1,5 +1,6 @@
 ﻿using UpOnlineAFVApi.DTOs;
 using UpOnlineAFVApi.Filtros;
+using UpOnlineAFVApi.Utils;
 
 namespace UpOnlineAFVApi.Servico
 {
@@ -8,7 +9,7 @@ namespace UpOnlineAFVApi.Servico
 
         Task<Resposta<ClienteDTO>> SalvarCliente(ClienteDTO clienteDTOSalvar);
 
-        Task<Resposta<List<ClienteDTO>>> BuscarClientes(int paginaAtual, int elementosPorPagina);
+        Task<Resposta<RetornoListagem<List<ClienteDTO>>>> BuscarClientes(String token, int paginaAtual, int elementosPorPagina);
 
         Task<Resposta<ClienteDTO>> BuscarClientePeloId(int idCliente);
 

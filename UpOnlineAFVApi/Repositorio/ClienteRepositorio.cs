@@ -32,23 +32,16 @@ namespace UpOnlineAFVApi.Repositorio
             return await Contexto.Clientes.FindAsync(clienteId);
         }
 
+        // buscar clientes paginado
         public async Task<List<Cliente>> BuscarClientes(int paginaAtual, int totalElementosPorPagina)
         {
-            throw new NotImplementedException();
-        }
 
-        // cadastrar cliente pessoa fisica
-        public async Task CadastrarClientePessoaFisica(ClientePessoaFisica clientePessoaFisicaCadastrar)
-        {
-            await Contexto.ClientesPessoasFisicas.AddAsync(clientePessoaFisicaCadastrar);
-            await Contexto.SaveChangesAsync();
-        }
-
-        // cadastrar cliente pessoa juridica
-        public async Task CadastrarClientePessoaJuridica(ClientePessoaJuridica clientePessoaJuridicaCadastrar)
-        {
-            await Contexto.ClientesPessoasJuridicas.AddAsync(clientePessoaJuridicaCadastrar);
-            await Contexto.SaveChangesAsync();
+            return await Contexto.Clientes
+                .OrderBy(c => c.DataCadastro)
+                .Include(c => c.Endereco)
+                .Skip((paginaAtual - 1) * totalElementosPorPagina)
+                .Take(totalElementosPorPagina)
+                .ToListAsync();
         }
 
         // deletar cliente
@@ -56,16 +49,6 @@ namespace UpOnlineAFVApi.Repositorio
         {
             Contexto.Clientes.Entry(clienteDeletar).State = EntityState.Deleted;
             await Contexto.SaveChangesAsync();
-        }
-
-        public async Task EditarClientePessoaFisica(ClientePessoaFisica clientePessoaFisicaEditar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task EditarClientePessoaJuridica(ClientePessoaJuridica clientePessoaJuridicaEditar)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<List<Cliente>> FiltrarClientes(int paginaAtual, int totalElementosPorPagina, FiltroClientes filtroClientes)
@@ -77,7 +60,7 @@ namespace UpOnlineAFVApi.Repositorio
         public async Task<Cliente> BuscarClientePeloCpf(String cpf)
         {
 
-            return await Contexto.ClientesPessoasFisicas.FirstOrDefaultAsync(c => c.Cpf.Equals(cpf.Trim()));
+            return await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf.Equals(cpf.Trim()));
         }
 
         // buscar cliente pelo telefone principal
@@ -114,6 +97,28 @@ namespace UpOnlineAFVApi.Repositorio
         public async Task RollbackTransacao()
         {
             await Contexto.Database.RollbackTransactionAsync();
+        }
+
+        // cadastrar cliente
+        public async Task CadastrarCliente(Cliente clienteCadastrar)
+        {
+            await Contexto.Clientes.AddAsync(clienteCadastrar);
+            await Contexto.SaveChangesAsync();
+        }
+
+        // editar cliente
+        public async Task EditarCliente(Cliente clienteEditar)
+        {
+            Contexto.Clientes.Entry(clienteEditar).State = EntityState.Modified;
+            await Contexto.SaveChangesAsync();
+        }
+
+        // buscar total de clientes cadastrados no banco de dados
+        public async Task<int> BuscarTotalClientesCadastrados()
+        {
+            List<Cliente> clientes = await Contexto.Clientes.ToListAsync();
+
+            return clientes.Count;
         }
 
     }

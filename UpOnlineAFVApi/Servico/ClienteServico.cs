@@ -1,4 +1,5 @@
 ﻿using UpOnlineAFVApi.DTOs;
+using UpOnlineAFVApi.Enums;
 using UpOnlineAFVApi.Filtros;
 using UpOnlineAFVApi.Models;
 using UpOnlineAFVApi.Repositorio;
@@ -10,10 +11,13 @@ namespace UpOnlineAFVApi.Servico
     {
 
         private readonly IClienteRepositorio _clienteRepositorio;
+        private readonly ITokenServico _tokenServico;
+        private readonly int[] _elementosPorPaginaConsulta = [ 5, 10, 50 ];
 
-        public ClienteServico(IClienteRepositorio clienteRepositorio)
+        public ClienteServico(IClienteRepositorio clienteRepositorio, ITokenServico tokenServico)
         {
             _clienteRepositorio = clienteRepositorio;
+            _tokenServico = tokenServico;
         }
 
         public async Task<Resposta<ClienteDTO>> AlterarStatusCliente(int idCliente, bool novoStatus)
@@ -59,9 +63,133 @@ namespace UpOnlineAFVApi.Servico
 
         }
 
-        public async Task<Resposta<List<ClienteDTO>>> BuscarClientes(int paginaAtual, int elementosPorPagina)
+        private int ObterUltimaPaginaListagem(int totalElementos, int elementosPorPagina)
         {
-            throw new NotImplementedException();
+
+            if (totalElementos <= elementosPorPagina)
+            {
+
+                return 1;
+            }
+
+            return totalElementos / elementosPorPagina;
+        }
+
+        // buscar clientes
+        public async Task<Resposta<RetornoListagem<List<ClienteDTO>>>> BuscarClientes(String token, int paginaAtual, int elementosPorPagina)
+        {
+
+            try
+            {
+                // TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
+
+                if (paginaAtual <= 0)
+                {
+                    paginaAtual = 1;
+                }
+
+                if (!_elementosPorPaginaConsulta.Contains(elementosPorPagina))
+                {
+                    elementosPorPagina = _elementosPorPaginaConsulta[ 0 ];
+                }
+
+                List<Cliente> clientes = await _clienteRepositorio.BuscarClientes(paginaAtual, elementosPorPagina);
+                int totalClientes = await _clienteRepositorio.BuscarTotalClientesCadastrados();
+                int ultimaPagina = ObterUltimaPaginaListagem(totalClientes, elementosPorPagina);
+
+                if (clientes.Count == 0)
+                {
+
+                    return new Resposta<RetornoListagem<List<ClienteDTO>>>("Nenhum cliente na pagina atual!", true, new RetornoListagem<List<ClienteDTO>>()
+                    {
+                        Elementos = new List<ClienteDTO>(),
+                        PaginaAtual = paginaAtual,
+                        TotalElementos = totalClientes,
+                        UltimaPagina = ultimaPagina
+                    });
+                }
+
+                List<ClienteDTO> clientesDTO = new List<ClienteDTO>();
+
+                clientes.ForEach((cliente) =>
+                {
+                    ClienteDTO clienteDTO = new ClienteDTO();
+
+                    clienteDTO.ClienteId = cliente.ClienteId;
+
+                    if (cliente.TipoPessoa == "pf")
+                    {
+                        clienteDTO.TipoPessoa = TipoPessoa.PessoaFisica;
+                    }
+                    else
+                    {
+                        clienteDTO.TipoPessoa = TipoPessoa.PessoaJuridica;
+                    }
+
+                    clienteDTO.TipoPessoaNome = cliente.TipoPessoa;
+
+                    clienteDTO.TelefonePrincipal = cliente.TelefonePrincipal;
+                    clienteDTO.TelefoneSecundario = cliente.TelefoneSecundario;
+                    clienteDTO.EmailPrincipal = cliente.EmailPrincipal;
+                    clienteDTO.EmailSecundario = cliente.EmailSecundario;
+                    clienteDTO.Status = cliente.Status;
+                    clienteDTO.NomeCompleto = cliente.NomeCompleto;
+                    clienteDTO.Cpf = cliente.Cpf;
+                    clienteDTO.Rg = cliente.Rg;
+                    clienteDTO.DataNascimento = cliente.DataNascimento;
+                    clienteDTO.RazaoSocial = cliente.RazaoSocial;
+                    clienteDTO.Cnpj = cliente.Cnpj;
+                    clienteDTO.DataFundacao = cliente.DataFundacao;
+                    clienteDTO.ValorPatrimonio = cliente.ValorPatrimonio;
+
+                    if (cliente.Genero == "Masculino")
+                    {
+                        clienteDTO.Genero = Genero.Masculino;
+                    }
+                    else if (cliente.Genero == "Feminino")
+                    {
+                        clienteDTO.Genero = Genero.Feminino;
+                    }
+                    else if (cliente.Genero == "Outro")
+                    {
+                        clienteDTO.Genero = Genero.Outro;
+                    }
+
+                    clienteDTO.GeneroNome = cliente.Genero;
+
+                    clienteDTO.EnderecoDTO = new EnderecoDTO()
+                    {
+                        EnderecoId = cliente.Endereco.EnderecoId,
+                        Cep = cliente.Endereco.Cep,
+                        Complemento = cliente.Endereco.Complemento,
+                        Logradouro = cliente.Endereco.Logradouro,
+                        Bairro = cliente.Endereco.Bairro,
+                        Cidade = cliente.Endereco.Cidade,
+                        Uf = cliente.Endereco.Uf
+                    };
+
+                    clientesDTO.Add(clienteDTO);
+                });
+
+                return new Resposta<RetornoListagem<List<ClienteDTO>>>("Clientes encontrados com sucesso!", true, new RetornoListagem<List<ClienteDTO>>()
+                {
+                    Elementos = clientesDTO,
+                    PaginaAtual = paginaAtual,
+                    TotalElementos = totalClientes,
+                    UltimaPagina = ultimaPagina
+                });
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                return new Resposta<RetornoListagem<List<ClienteDTO>>>(e.Message, false, null);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<RetornoListagem<List<ClienteDTO>>>("Erro ao tentar-se consultar os clientes!", false, null);
+            }
+
         }
 
         public async Task<Resposta<bool>> DeletarCliente(int idClienteDeletar)
@@ -110,180 +238,159 @@ namespace UpOnlineAFVApi.Servico
         private async Task<Resposta<ClienteDTO>> CadastrarCliente(ClienteDTO clienteDTOCadastrar)
         {
 
-            if (clienteDTOCadastrar.TipoPessoa == Enums.TipoPessoa.PessoaFisica)
+            try
             {
 
-                // cadastrar cliente pessoa fisica
-                return await CadastrarClientePessoaFisica(clienteDTOCadastrar);
+                // validar o tipo de pessoa informado
+                if (clienteDTOCadastrar.TipoPessoa != TipoPessoa.PessoaFisica && clienteDTOCadastrar.TipoPessoa != TipoPessoa.PessoaJuridica)
+                {
+
+                    return new Resposta<ClienteDTO>("Tipo de pessoa inválido!", false, null);
+                }
+
+                if (clienteDTOCadastrar.TipoPessoa.Equals(TipoPessoa.PessoaFisica))
+                {
+                    // cadastrar cliente pessoa fisica
+                    RetornoValidarDadosCliente retornoValidarDadosClientePessoaFisica = ValidaDadosCadastroCliente.ValidarDadosCadastroCliente(clienteDTOCadastrar);
+
+                    if (!retornoValidarDadosClientePessoaFisica.Ok)
+                    {
+
+                        if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("cpf"))
+                        {
+
+                            return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados[ "cpf" ], false, null);
+                        }
+
+                        if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("dataNascimento"))
+                        {
+
+                            return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados[ "dataNascimento" ], false, null);
+                        }
+
+                        if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("emailPrincipal"))
+                        {
+
+                            return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados[ "emailPrincipal" ], false, null);
+                        }
+
+                        if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("emailSecundario"))
+                        {
+
+                            return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados[ "emailSecundario" ], false, null);
+                        }
+
+                        if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("telefonePrincipal"))
+                        {
+
+                            return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados[ "telefoneSecundario" ], false, null);
+                        }
+
+                        return new Resposta<ClienteDTO>("Erro ao tentar-se validar os dados!", false, null);
+                    }
+                    else
+                    {
+                        // validar se já existe outro cliente cadastrado com o mesmo e-mail principal
+                        Cliente clienteMesmoEmailPrincipal = await _clienteRepositorio.BuscarClientePeloEmailPrincipal(clienteDTOCadastrar.EmailPrincipal);
+
+                        if (clienteMesmoEmailPrincipal is not null)
+                        {
+
+                            return new Resposta<ClienteDTO>("Já existe outro cliente cadastrado com o e-mail principal informado!", false, null);
+                        }
+
+                        // validar se já existe outro cliente cadastrado com o mesmo cpf
+                        Cliente clienteMesmoCpf = await _clienteRepositorio.BuscarClientePeloCpf(clienteDTOCadastrar.Cpf);
+
+                        if (clienteMesmoCpf != null)
+                        {
+
+                            return new Resposta<ClienteDTO>("Já existe outro cliente cadastrado com esse cpf!", false, null);
+                        }
+
+                        // cadastrar o cliente
+                        Cliente clienteCadastrar = new Cliente()
+                        {
+                            TipoPessoa = clienteDTOCadastrar.TipoPessoa == TipoPessoa.PessoaFisica ? "pf" : "pj",
+                            EmailPrincipal = clienteDTOCadastrar.EmailPrincipal,
+                            EmailSecundario = clienteDTOCadastrar.EmailSecundario,
+                            TelefonePrincipal = clienteDTOCadastrar.TelefonePrincipal,
+                            TelefoneSecundario = clienteDTOCadastrar.TelefoneSecundario,
+                            DataCadastro = new DateTime(),
+                            Status = clienteDTOCadastrar.Status,
+                            NomeCompleto = clienteDTOCadastrar.NomeCompleto,
+                            Cpf = clienteDTOCadastrar.Cpf,
+                            DataNascimento = clienteDTOCadastrar.DataNascimento,
+                            Rg = clienteDTOCadastrar.Rg,
+                            RazaoSocial = "",
+                            DataFundacao = new DateTime(),
+                            Cnpj = "",
+                            ValorPatrimonio = 0
+                        };
+
+                        if (clienteDTOCadastrar.Genero == Genero.Masculino)
+                        {
+                            clienteCadastrar.Genero = "Masculino";
+                            clienteDTOCadastrar.GeneroNome = "Masculino";
+                        }
+                        else if (clienteDTOCadastrar.Genero == Genero.Feminino)
+                        {
+                            clienteCadastrar.Genero = "Feminino";
+                            clienteDTOCadastrar.GeneroNome = "Feminino";
+                        }
+                        else
+                        {
+                            clienteCadastrar.Genero = "Outro";
+                            clienteDTOCadastrar.GeneroNome = "Outro";
+                        }
+
+                        await _clienteRepositorio.CadastrarCliente(clienteCadastrar);
+
+                        // cadastrar o endereço do cliente
+                        Endereco endereco = new Endereco();
+                        endereco.Cep = clienteDTOCadastrar.EnderecoDTO.Cep;
+                        endereco.Logradouro = clienteDTOCadastrar.EnderecoDTO.Logradouro;
+                        endereco.Bairro = clienteDTOCadastrar.EnderecoDTO.Bairro;
+                        endereco.Complemento = clienteDTOCadastrar.EnderecoDTO.Complemento;
+                        endereco.Cidade = clienteDTOCadastrar.EnderecoDTO.Cidade;
+                        endereco.Uf = clienteDTOCadastrar.EnderecoDTO.Uf;
+                        endereco.ClienteId = clienteCadastrar.ClienteId;
+
+                        await _clienteRepositorio.CadastrarEnderecoCliente(endereco);
+
+                        await _clienteRepositorio.CommitarTransacao();
+
+                        clienteDTOCadastrar.ClienteId = clienteCadastrar.ClienteId;
+                        clienteDTOCadastrar.EnderecoDTO.EnderecoId = endereco.EnderecoId;
+                        clienteDTOCadastrar.TipoPessoaNome = clienteDTOCadastrar.TipoPessoa == TipoPessoa.PessoaFisica ? "pf" : "pj";
+
+                        return new Resposta<ClienteDTO>("Cliente cadastrado com sucesso!", true, clienteDTOCadastrar);
+                    }
+
+                }
+                else
+                {
+                    // cadastrar cliente pessoa juridica
+
+                    return new Resposta<ClienteDTO>("Cadastrar cliente pessoa juridica!", true, null);
+                }
+
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                throw e;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
             }
 
-            // cadastrar cliente pessoa juridica
-            return await CadastrarClientePessoaJuridica(clienteDTOCadastrar);
         }
 
+        // editar cliente
         private async Task<Resposta<ClienteDTO>> EditarCliente(ClienteDTO clienteDTOEditar)
-        {
-            throw new NotImplementedException();
-        }
-
-        private async Task<Resposta<ClienteDTO>> CadastrarClientePessoaFisica(ClienteDTO clienteDTO)
-        {
-            // validar dados do cliente pessoa fisica
-            RetornoValidarDadosCliente retornoValidarDadosClientePessoaFisica = ValidaDadosCadastroCliente.ValidarDadosCadastroCliente(clienteDTO);
-
-            if (!retornoValidarDadosClientePessoaFisica.Ok)
-            {
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("cpf"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["cpf"], false, null);
-                }
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("dataNascimento"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["dataNascimento"], false, null);
-                }
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("telefonePrincipal"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["telefonePrincipal"], false, null);
-                }
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("telefoneSecundario"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["telefoneSecundario"], false, null);
-                }
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("emailPrincipal"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["emailPrincipal"], false, null);
-                }
-
-                if (retornoValidarDadosClientePessoaFisica.ValidacoesDados.ContainsKey("emailSecundario"))
-                {
-
-                    return new Resposta<ClienteDTO>(retornoValidarDadosClientePessoaFisica.ValidacoesDados["emailSecundario"], false, null);
-                }
-
-            }
-
-            // validar se já existe outro cliente cadastrado com o mesmo cpf
-            Cliente clienteMesmoCpf = await _clienteRepositorio.BuscarClientePeloCpf(clienteDTO.Cpf);
-
-            if (clienteMesmoCpf is not null)
-            {
-
-                return new Resposta<ClienteDTO>()
-                {
-                    Msg = "Já existe outro cliente cadastrado com o mesmo cpf!",
-                    Ok = false,
-                    Conteudo = null
-                };
-            }
-
-            // validar se já existe outro cliente cadastrado com o mesmo telefone principal
-            Cliente clienteMesmoTelefonePrincipal = await _clienteRepositorio.BuscarClientePeloTelefonePrincipal(clienteDTO.TelefonePrincipal);
-
-            if (clienteMesmoTelefonePrincipal is not null)
-            {
-
-                return new Resposta<ClienteDTO>()
-                {
-                    Msg = "Já existe outro cliente com o mesmo telefone principal!",
-                    Conteudo = null,
-                    Ok = false
-                };
-            }
-
-            // validar se já existe outro cliente cadastrado com o mesmo e-mail principal
-            Cliente clienteMesmoEmailPrincipal = await _clienteRepositorio.BuscarClientePeloEmailPrincipal(clienteDTO.EmailPrincipal);
-
-            if (clienteMesmoEmailPrincipal is not null)
-            {
-
-                return new Resposta<ClienteDTO>()
-                {
-                    Msg = "Já existe outro cliente cadastrado com o mesmo e-mail principal!",
-                    Conteudo = null,
-                    Ok = false
-                };
-            }
-
-            ClientePessoaFisica clientePessoaFisica = new ClientePessoaFisica();
-            clientePessoaFisica.NomeCompleto = clienteDTO.NomeCompleto;
-            clientePessoaFisica.TelefonePrincipal = clienteDTO.TelefonePrincipal;
-            clientePessoaFisica.TelefoneSecundario = clienteDTO.TelefoneSecundario;
-            clientePessoaFisica.Cpf = clienteDTO.Cpf;
-            clientePessoaFisica.EmailPrincipal = clienteDTO.EmailPrincipal;
-            clientePessoaFisica.EmailSecundario = clienteDTO.EmailSecundario;
-            clientePessoaFisica.DataCadastro = new DateTime();
-            clientePessoaFisica.TipoPessoa = "pf";
-            clientePessoaFisica.DataNascimento = clienteDTO.DataNascimento;
-
-            if (clienteDTO.Genero == Enums.Genero.Masculino)
-            {
-                clientePessoaFisica.Genero = "Masculino";
-            }
-            else if (clienteDTO.Genero == Enums.Genero.Feminino)
-            {
-                clientePessoaFisica.Genero = "Feminino";
-            }
-            else
-            {
-                clientePessoaFisica.Genero = "Outro";
-            }
-
-            clientePessoaFisica.Status = clienteDTO.Status;
-
-            await _clienteRepositorio.CadastrarClientePessoaFisica(clientePessoaFisica);
-
-            Endereco endereco = new Endereco();
-            endereco.ClienteId = clientePessoaFisica.ClienteId;
-            endereco.Cep = clienteDTO.EnderecoDTO.Cep;
-            endereco.Logradouro = clienteDTO.EnderecoDTO.Logradouro;
-            endereco.Complemento = clienteDTO.EnderecoDTO.Complemento;
-            endereco.Cidade = clienteDTO.EnderecoDTO.Cidade;
-            endereco.Bairro = clienteDTO.EnderecoDTO.Bairro;
-            endereco.Uf = clienteDTO.EnderecoDTO.Uf;
-
-            await _clienteRepositorio.CadastrarEnderecoCliente(endereco);
-
-            clienteDTO.ClienteId = clientePessoaFisica.ClienteId;
-            clienteDTO.EnderecoDTO.EnderecoId = endereco.EnderecoId;
-
-            if (clienteDTO.Genero == Enums.Genero.Masculino)
-            {
-                clienteDTO.GeneroNome = "Masculino";
-            }
-            else if (clienteDTO.Genero == Enums.Genero.Feminino)
-            {
-                clienteDTO.GeneroNome = "Feminino";
-            }
-            else
-            {
-                clienteDTO.GeneroNome = "Outro";
-            }
-
-            if (clienteDTO.TipoPessoa == Enums.TipoPessoa.PessoaFisica)
-            {
-                clienteDTO.TipoPessoaNome = "pf";
-            }
-            else
-            {
-                clienteDTO.TipoPessoaNome = "pj";
-            }
-
-            await _clienteRepositorio.CommitarTransacao();
-
-            return new Resposta<ClienteDTO>("Cliente cadastrado com sucesso!", true, clienteDTO);
-        }
-
-        private async Task<Resposta<ClienteDTO>> CadastrarClientePessoaJuridica(ClienteDTO clienteDTO)
         {
             throw new NotImplementedException();
         }

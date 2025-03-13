@@ -9,8 +9,6 @@ namespace UpOnlineAFVApi.Contexto
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<ClientePessoaFisica> ClientesPessoasFisicas { get; set; }
-        public DbSet<ClientePessoaJuridica> ClientesPessoasJuridicas { get; set; }
         public DbSet<Notificacao> Notificacoes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<NivelAcessoUsuario> NiveisAcessoUsuarios { get; set; }

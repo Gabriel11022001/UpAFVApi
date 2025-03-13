@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UpOnlineAFVApi.Contexto;
 
@@ -11,9 +12,11 @@ using UpOnlineAFVApi.Contexto;
 namespace UpOnlineAFVApi.Migrations
 {
     [DbContext(typeof(ApiDbContexto))]
-    partial class ApiDbContextoModelSnapshot : ModelSnapshot
+    [Migration("20250313144024_MigrationAlterarEstruturaTabelaClientes")]
+    partial class MigrationAlterarEstruturaTabelaClientes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -16,16 +16,23 @@ namespace UpOnlineAFVApi.DTOs
         [ Required(ErrorMessage = "Informe o e-mail principal!") ]
         public String EmailPrincipal { get; set; }
         public String EmailSecundario { get; set; }
+        public Boolean Status { get; set; }
+
+        // pessoa fisica
         public Genero Genero { get; set; }
         public String GeneroNome { get; set; }
         public String NomeCompleto { get; set; }
         public String Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
+        public String Rg { get; set; }
+
+        // pessoa juridica
         public String Cnpj { get; set; }
         public String RazaoSocial { get; set; }
         public Double ValorPatrimonio { get; set; }
         public DateTime DataFundacao { get; set; }
-        public Boolean Status { get; set; }
+
+        // endereço
         [ Required(ErrorMessage = "Informe o endereço!") ]
         public EnderecoDTO EnderecoDTO { get; set; }
 
