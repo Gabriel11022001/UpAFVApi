@@ -20,19 +20,97 @@ namespace UpOnlineAFVApi.Servico
             _tokenServico = tokenServico;
         }
 
-        public async Task<Resposta<ClienteDTO>> AlterarStatusCliente(int idCliente, bool novoStatus)
+        // alterar o status do cliente
+        public async Task<Resposta<ClienteDTO>> AlterarStatusCliente(String token, int idCliente, bool novoStatus)
         {
-            throw new NotImplementedException();
-        }
-
-        // buscar cliente pelo id
-        public async Task<Resposta<ClienteDTO>> BuscarClientePeloId(int idCliente)
-        {
-
-            throw new NotImplementedException();
 
             try
             {
+                // TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
+
+                Cliente cliente = await _clienteRepositorio.BuscarClientePeloId(idCliente);
+
+                if (cliente is null)
+                {
+
+                    return new Resposta<ClienteDTO>("Cliente não encontrado!", false, null);
+                }
+
+                if (cliente.Status == novoStatus)
+                {
+
+                    return new Resposta<ClienteDTO>("Esse cliente já possui esse status!", true, null);
+                }
+
+                await _clienteRepositorio.AlterarStatusCliente(idCliente, novoStatus);
+
+                ClienteDTO clienteDTO = new ClienteDTO();
+                clienteDTO.ClienteId = cliente.ClienteId;
+                clienteDTO.Status = novoStatus;
+                clienteDTO.TelefonePrincipal = cliente.TelefonePrincipal;
+                clienteDTO.TelefoneSecundario = cliente.TelefoneSecundario;
+                clienteDTO.EmailPrincipal = cliente.EmailPrincipal;
+                clienteDTO.EmailSecundario = cliente.EmailSecundario;
+                clienteDTO.TipoPessoa = cliente.TipoPessoa == "pf" ? TipoPessoa.PessoaFisica : TipoPessoa.PessoaJuridica;
+                clienteDTO.TipoPessoaNome = cliente.TipoPessoa;
+                clienteDTO.NomeCompleto = cliente.NomeCompleto;
+                clienteDTO.Rg = cliente.Rg;
+                clienteDTO.Cpf = cliente.Cpf;
+                clienteDTO.DataNascimento = cliente.DataNascimento;
+                
+                if (cliente.Genero == "Masculino")
+                {
+                    clienteDTO.Genero = Genero.Masculino;
+                }
+                else if (cliente.Genero == "Feminino")
+                {
+                    clienteDTO.Genero = Genero.Feminino;
+                }
+                else if (cliente.Genero == "Outro")
+                {
+                    clienteDTO.Genero = Genero.Outro;
+                }
+
+                clienteDTO.GeneroNome = cliente.Genero;
+                clienteDTO.RazaoSocial = cliente.RazaoSocial;
+                clienteDTO.Cnpj = cliente.Cnpj;
+                clienteDTO.DataFundacao = cliente.DataFundacao;
+                clienteDTO.ValorPatrimonio = cliente.ValorPatrimonio;
+
+                EnderecoDTO enderecoDTO = new EnderecoDTO();
+                enderecoDTO.EnderecoId = cliente.Endereco.EnderecoId;
+                enderecoDTO.Cep = cliente.Endereco.Cep;
+                enderecoDTO.Complemento = cliente.Endereco.Complemento;
+                enderecoDTO.Logradouro = cliente.Endereco.Logradouro;
+                enderecoDTO.Cidade = cliente.Endereco.Cidade;
+                enderecoDTO.Bairro = cliente.Endereco.Bairro;
+                enderecoDTO.Uf = cliente.Endereco.Uf;
+
+                clienteDTO.EnderecoDTO = enderecoDTO;
+
+                return new Resposta<ClienteDTO>("O status do cliente foi alterado com sucesso!", true, clienteDTO);
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                return new Resposta<ClienteDTO>(e.Message, false, null);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<ClienteDTO>("Erro ao tentar-se alterar o status do cliente!", false, null);
+            }
+
+        }
+
+        // buscar cliente pelo id
+        public async Task<Resposta<ClienteDTO>> BuscarClientePeloId(String token, int idCliente)
+        {
+
+            try
+            {
+                // TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
+
                 Cliente cliente = await _clienteRepositorio.BuscarClientePeloId(idCliente);
 
                 if (cliente is null)
@@ -54,6 +132,52 @@ namespace UpOnlineAFVApi.Servico
                     clienteDTO.TipoPessoa = Enums.TipoPessoa.PessoaJuridica;
                 }
 
+                clienteDTO.TelefonePrincipal = cliente.TelefonePrincipal;
+                clienteDTO.TelefoneSecundario = cliente.TelefoneSecundario;
+                clienteDTO.EmailPrincipal = cliente.EmailPrincipal;
+                clienteDTO.EmailSecundario = cliente.EmailSecundario;
+                clienteDTO.Status = cliente.Status;
+                clienteDTO.NomeCompleto = cliente.NomeCompleto;
+                clienteDTO.Cpf = cliente.Cpf;
+                clienteDTO.DataNascimento = cliente.DataNascimento;
+                clienteDTO.Rg = cliente.Rg;
+
+                if (cliente.Genero == "Masculino")
+                {
+                    clienteDTO.Genero = Genero.Masculino;
+                }
+                else if (cliente.Genero == "Feminino")
+                {
+                    clienteDTO.Genero = Genero.Feminino;
+                }
+                else if (cliente.Genero == "Outro")
+                {
+                    clienteDTO.Genero = Genero.Outro;
+                }
+
+                clienteDTO.GeneroNome = cliente.Genero;
+                clienteDTO.RazaoSocial = cliente.RazaoSocial;
+                clienteDTO.DataFundacao = cliente.DataFundacao;
+                clienteDTO.Cnpj = cliente.Cnpj;
+                clienteDTO.ValorPatrimonio = cliente.ValorPatrimonio;
+
+                EnderecoDTO enderecoDTO = new EnderecoDTO();
+                enderecoDTO.EnderecoId = cliente.Endereco.EnderecoId;
+                enderecoDTO.Cep = cliente.Endereco.Cep;
+                enderecoDTO.Logradouro = cliente.Endereco.Logradouro;
+                enderecoDTO.Complemento = cliente.Endereco.Complemento;
+                enderecoDTO.Bairro = cliente.Endereco.Bairro;
+                enderecoDTO.Cidade = cliente.Endereco.Cidade;
+                enderecoDTO.Uf = cliente.Endereco.Uf;
+
+                clienteDTO.EnderecoDTO = enderecoDTO;
+
+                return new Resposta<ClienteDTO>("Cliente encontrado com sucesso!", true, clienteDTO);
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                return new Resposta<ClienteDTO>(e.Message, false, null);
             }
             catch (Exception e)
             {
@@ -392,7 +516,40 @@ namespace UpOnlineAFVApi.Servico
         // editar cliente
         private async Task<Resposta<ClienteDTO>> EditarCliente(ClienteDTO clienteDTOEditar)
         {
+
             throw new NotImplementedException();
+
+            try
+            {
+                
+                // tipo de pessoa inválido
+                if (clienteDTOEditar.TipoPessoa != TipoPessoa.PessoaFisica && clienteDTOEditar.TipoPessoa != TipoPessoa.PessoaJuridica)
+                {
+
+                    return new Resposta<ClienteDTO>("Tipo de pessoa inválida!", false, null);
+                }
+
+                if (clienteDTOEditar.TipoPessoa == TipoPessoa.PessoaFisica)
+                {
+                    // editar pessoa fisica
+                }
+                else
+                {
+                    // editar pessoa juridica
+                }
+
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                return new Resposta<ClienteDTO>(e.Message, false, null);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<ClienteDTO>("Erro ao tentar-se editar o cliente!", false, null);
+            }
+
         }
 
     }

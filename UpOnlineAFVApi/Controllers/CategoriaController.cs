@@ -80,5 +80,20 @@ namespace UpOnlineAFVApi.Controllers
             return BadRequest(resposta);
         }
 
+        // deletar categoria na base de dados
+        [ HttpDelete ]
+        public async Task<IActionResult> DeletarCategoria([ FromQuery ]String token, int idCategoriaDeletar)
+        {
+            Resposta<Boolean> respostaDeletarCategoria = await _categoriaServico.DeletarCategoria(token, idCategoriaDeletar);
+
+            if (respostaDeletarCategoria.Ok)
+            {
+
+                return Ok(respostaDeletarCategoria);
+            }
+
+            return BadRequest(respostaDeletarCategoria);
+        }
+
     }
 }

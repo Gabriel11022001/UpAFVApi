@@ -22,5 +22,7 @@ namespace UpOnlineAFVApi.Repositorio
 
         Task AlterarStatusProduto(int idProdutoAlterarStatus, Boolean novoStatus);
 
+        Task<List<Produto>> BuscarProdutosPelaCategoria(int idCategoria);
+
     }
 }

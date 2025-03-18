@@ -11,13 +11,13 @@ namespace UpOnlineAFVApi.Servico
 
         Task<Resposta<RetornoListagem<List<ClienteDTO>>>> BuscarClientes(String token, int paginaAtual, int elementosPorPagina);
 
-        Task<Resposta<ClienteDTO>> BuscarClientePeloId(int idCliente);
+        Task<Resposta<ClienteDTO>> BuscarClientePeloId(String token, int idCliente);
 
         Task<Resposta<List<ClienteDTO>>> FiltrarClientes(int paginaAtual, int elementosPorPagina, FiltroClientes filtroClientes);
 
         Task<Resposta<Boolean>> DeletarCliente(int idClienteDeletar);
 
-        Task<Resposta<ClienteDTO>> AlterarStatusCliente(int idCliente, Boolean novoStatus);
+        Task<Resposta<ClienteDTO>> AlterarStatusCliente(String token, int idCliente, Boolean novoStatus);
 
     }
 }

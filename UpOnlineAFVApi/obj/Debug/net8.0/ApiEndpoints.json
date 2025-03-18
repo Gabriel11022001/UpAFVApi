@@ -54,6 +54,27 @@
   },
   {
     "ContainingType": "UpOnlineAFVApi.Controllers.CategoriaController",
+    "Method": "DeletarCategoria",
+    "RelativePath": "api/Categoria",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idCategoriaDeletar",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.CategoriaController",
     "Method": "BuscarCategoriaPeloId",
     "RelativePath": "api/Categoria/{idCategoria}",
     "HttpMethod": "GET",
@@ -125,6 +146,53 @@
       },
       {
         "Name": "elementosPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ClienteController",
+    "Method": "AlterarStatusCliente",
+    "RelativePath": "api/Cliente/alterar-status-cliente",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idCliente",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "novoStatus",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpOnlineAFVApi.Controllers.ClienteController",
+    "Method": "BuscarClientePeloId",
+    "RelativePath": "api/Cliente/buscar-cliente-pelo-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idCliente",
         "Type": "System.Int32",
         "IsRequired": false
       }

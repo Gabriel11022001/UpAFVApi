@@ -1,6 +1,7 @@
 ﻿using UpOnlineAFVApi.DTOs;
 using UpOnlineAFVApi.Models;
 using UpOnlineAFVApi.Repositorio;
+using UpOnlineAFVApi.Utils;
 
 namespace UpOnlineAFVApi.Servico
 {
@@ -8,12 +9,20 @@ namespace UpOnlineAFVApi.Servico
     {
 
         private readonly ICategoriaRepositorio _categoriaRepositorio;
+        private readonly IProdutoRepositorio _produtoRepositorio;
+        private readonly ITokenServico _tokenServico;
         private const int _maximoElementosPorPagina = 10;
         private const int _minimoElementosPorPagina = 5;
 
-        public CategoriaServico(ICategoriaRepositorio categoriaRepositorio)
+        public CategoriaServico(
+            ICategoriaRepositorio categoriaRepositorio,
+            IProdutoRepositorio produtoRepositorio,
+            ITokenServico tokenServico
+        )
         {
             _categoriaRepositorio = categoriaRepositorio;
+            _produtoRepositorio = produtoRepositorio;
+            _tokenServico = tokenServico;
         }
 
         // alterar status da categoria
@@ -131,9 +140,44 @@ namespace UpOnlineAFVApi.Servico
 
         }
 
-        public async Task<Resposta<bool>> DeletarCategoria(int idCategoriaDeletar)
+        // deletar categoria na base de dados
+        public async Task<Resposta<bool>> DeletarCategoria(String token, int idCategoriaDeletar)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                // TokenDTO tokenDTO = await _tokenServico.ValidarTokenUsuario(token);
+                Categoria categoria = await _categoriaRepositorio.BuscarCategoriaPeloId(idCategoriaDeletar);
+
+                if (categoria is null)
+                {
+
+                    return new Resposta<bool>("Não existe uma categoria cadastrada com o id informando na base de dados!", false, false);
+                }
+
+                List<Produto> produtosCategoria = await _produtoRepositorio.BuscarProdutosPelaCategoria(idCategoriaDeletar);
+
+                if (produtosCategoria.Count > 0)
+                {
+
+                    return new Resposta<bool>("Essa categoria possui produtos relacionados!", false, false);
+                }
+
+                await _categoriaRepositorio.DeletarCategoria(categoria);
+
+                return new Resposta<bool>("Categoria deletada com sucesso!", true, true);
+            }
+            catch (TokenInvalidoException e)
+            {
+
+                return new Resposta<bool>(e.Message, false, false);
+            }
+            catch (Exception e)
+            {
+
+                return new Resposta<bool>("Erro ao tentar-se deletar a categoria!", false, false);
+            }
+
         }
 
         public async Task<Resposta<List<CategoriaDTO>>> FiltrarCategoriaPeloStatus(bool status)

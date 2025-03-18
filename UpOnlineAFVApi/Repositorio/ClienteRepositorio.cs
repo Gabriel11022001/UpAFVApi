@@ -29,7 +29,7 @@ namespace UpOnlineAFVApi.Repositorio
         public async Task<Cliente> BuscarClientePeloId(int clienteId)
         {
 
-            return await Contexto.Clientes.FindAsync(clienteId);
+            return await Contexto.Clientes.Include(c => c.Endereco).FirstOrDefaultAsync(c => c.ClienteId == clienteId);
         }
 
         // buscar clientes paginado

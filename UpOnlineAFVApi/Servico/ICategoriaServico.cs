@@ -15,7 +15,7 @@ namespace UpOnlineAFVApi.Servico
 
         Task<Resposta<List<CategoriaDTO>>> FiltrarCategoriaPeloStatus(Boolean status);
 
-        Task<Resposta<Boolean>> DeletarCategoria(int idCategoriaDeletar);
+        Task<Resposta<Boolean>> DeletarCategoria(String token, int idCategoriaDeletar);
 
         Task<Resposta<CategoriaDTO>> AlterarStatusCategoria(int idCategoria, Boolean novoStatus);
 

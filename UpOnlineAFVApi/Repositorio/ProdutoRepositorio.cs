@@ -86,5 +86,16 @@ namespace UpOnlineAFVApi.Repositorio
 
         }
 
+        // buscar produtos pela categoria
+        public async Task<List<Produto>> BuscarProdutosPelaCategoria(int idCategoria)
+        {
+
+            return await Contexto
+                .Produtos
+                .Include(p => p.Categoria)
+                .Where(p => p.CategoriaId == idCategoria)
+                .ToListAsync();
+        }
+
     }
 }

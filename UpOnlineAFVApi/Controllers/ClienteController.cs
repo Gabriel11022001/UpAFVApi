@@ -46,5 +46,29 @@ namespace UpOnlineAFVApi.Controllers
             return respostaConsultarClientes.Ok ? Ok(respostaConsultarClientes) : BadRequest(respostaConsultarClientes);
         }
 
+        // buscar cliente pelo id
+        [ HttpGet("buscar-cliente-pelo-id") ]
+        public async Task<IActionResult> BuscarClientePeloId([ FromQuery ] String token, int idCliente)
+        {
+            Resposta<ClienteDTO> respostaBuscarClientePeloId = await _clienteServico.BuscarClientePeloId(token, idCliente);
+
+            return respostaBuscarClientePeloId.Ok ? Ok(respostaBuscarClientePeloId) : BadRequest(respostaBuscarClientePeloId);
+        }
+
+        // alterar o status do cliente
+        [ HttpPut("alterar-status-cliente") ]
+        public async Task<IActionResult> AlterarStatusCliente([ FromQuery ] String token, int idCliente, Boolean novoStatus)
+        {
+            Resposta<ClienteDTO> respostaAlterarStatus = await _clienteServico.AlterarStatusCliente(token, idCliente, novoStatus);
+
+            if (respostaAlterarStatus.Ok)
+            {
+
+                return Ok(respostaAlterarStatus);
+            }
+
+            return BadRequest(respostaAlterarStatus);
+        }
+
     }
 }
